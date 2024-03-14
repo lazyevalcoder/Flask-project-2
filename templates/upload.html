@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload CSV File</title>
+</head>
+<body>
+    <h1>Upload a CSV file:</h1>
+    <form method="POST" enctype="multipart/form-data" action="{{ url_for('upload') }}">
+        <input type="file" name="file"/><br/><br/>
+        <input type="submit" value="Submit"/>
+    </form>
+</body>
+
+<body>
+    <h1>Upload a CSV file:</h1>
+    ...
+    
+    <hr />
+    
+    <h2>Results:</h2>
+    <p><strong>Top 3 cities with highest population:</strong></p>
+    <ul>
+        {% for city in top_cities %}
+            <li>{{city['City']}} - {{city['Population']}}</li>
+        {% endfor %}
+    </ul>
+    
+    <p><strong>Average population:</strong> {{ avg_population }}</p>
+    <p><strong>Median population:</strong> {{ median_population }}</p>
+</body>
+
+</html>
+
